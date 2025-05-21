@@ -1,0 +1,489 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialised;
+  -moz-osx-font-smothing: grayscale;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* *******************************************LANDING PAGE STYLES****************************************************** */
+/* Base Styles (Mobile-First) */
+.landing {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* DESIGN SECTION */
+/* DESIGN SECTION - Hidden on mobile/tablet */
+.landing-design {
+  display: none;
+}
+
+/* LOGIN SECTION */
+.login-section {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-form-container {
+  width: 100%;
+  max-width: 350px;
+  padding: 1.5rem;
+  background-color: white;
+}
+
+.label-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.landing-label {
+  width: 175px;
+  height: auto;
+}
+
+.login-form {
+  width: 100%;
+}
+.login-form input {
+  width: 100%;
+  height: 2.5rem;
+  margin: 0.3rem 0;
+  padding: 0 0.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: #fafafa;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+}
+
+.login-button {
+  width: 100%;
+  height: 2.5rem;
+  margin: 0.5rem 0;
+  background-color: #4cb5f9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.login-form input,
+.login-button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* DIVIDER SECTION */
+.weird-or-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgb(219, 219, 219);
+}
+
+.or {
+  margin: 0 1rem;
+  color: rgb(141, 141, 141);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+/* FOOTER LINKS */
+.facebook-login {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.facebook-login p {
+  color: #3579ea;
+  font-weight: 500;
+  font-size: 0.875rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: rgb(0, 55, 107);
+  font-size: 0.75rem;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.with-account {
+  font-size: 0.875rem;
+  margin: 1rem 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+#link-to-signup {
+  color: #3579ea;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.5rem 0;
+  max-width: 100%;
+}
+
+.footer-nav span {
+  margin: 0.3rem 0.5rem;
+  color: rgb(141, 141, 141);
+  cursor: pointer;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.footer-nav span:hover {
+  text-decoration: underline;
+}
+
+.footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  max-width: 100%;
+}
+.footer-info span {
+  color: rgb(141, 141, 141);
+  cursor: pointer;
+}
+
+#languages {
+  border: none;
+  color: rgb(141, 141, 141);
+  font-size: 0.75rem;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 768px) {
+  .landing {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .landing-design {
+    display: flex;
+    width: 45%;
+    max-width: 380px;
+    justify-content: center;
+  }
+
+  .design-picture {
+    width: 100%;
+    height: auto;
+  }
+
+  .login-section {
+    width: 35%;
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing {
+    gap: 4rem;
+  }
+  .landing-design {
+    width: 50%;
+    height: 50vh;
+  }
+  .login-section {
+    width: 30%;
+  }
+}
+
+/* ****************************************************SIGN UP PAGE********************************************** */
+/* Base Styles (Mobile-First) */
+.signup {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.signup-form-container {
+  width: 100%;
+  max-width: 350px;
+  margin: 1rem auto 0;
+  padding: 1.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.label-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.landing-label {
+  width: 175px;
+  height: auto;
+}
+
+.signup-string {
+  margin: 0 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(119, 119, 119);
+  text-align: center;
+}
+
+.facebook-button {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #0090ed;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.signup-form {
+  width: 100%;
+}
+
+.signup-form input {
+  width: 100%;
+  height: 2.5rem;
+  margin: 0.3rem 0;
+  padding: 0 0.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: #fafafa;
+  box-sizing: border-box;
+  font-size: 0.875rem;
+}
+
+.weird-or-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgb(219, 219, 219);
+}
+
+.or {
+  margin: 0 1rem;
+  color: rgb(141, 141, 141);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.signup-info {
+  margin: 1.5rem 0;
+}
+
+.signup-info p {
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgb(119, 119, 119);
+  line-height: 1.4;
+}
+
+#back-to-login {
+  color: #3579ea;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.signup-button {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #4cb5f9;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.signin-section {
+  width: 100%;
+  max-width: 350px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: white;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.signup-form input,
+.facebook-button,
+.signup-button {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.login-link {
+  color: #3579ea;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Media Queries */
+@media (max-width: 320px) {
+  .signup-form-container,
+  .signin-section {
+    padding: 1rem;
+  }
+
+  .signup-form input {
+    font-size: 0.9rem;
+  }
+}
+
+/* ********************************************************MAIN PAGE******************************************** */
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-section {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  width: 17%;
+  height: 100%;
+  border-right: 1px solid rgb(219, 219, 219);
+}
+
+.label {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.sidebar-label {
+  width: 125px;
+  height: auto;
+  margin-right: 45%;
+  margin-top: 15px;
+}
+
+.sidebar-options {
+  display: flex;
+  flex-direction: column;
+}
+
+.option {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-top: 4px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #ebedf0;
+}
+
+.active-option {
+  font-weight: bold;
+}
+
+.material-symbols-outlined {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* FEED SECTION */
+
+.feed-section {
+  width: 87%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.mid-section{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* Soggestions section */
+
+.suggestions-section{
+  border-left: 1px solid black;
+  width: 27%;
+}
