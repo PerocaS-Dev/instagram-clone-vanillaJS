@@ -410,8 +410,74 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: row;
+  overflow-y: scroll;
 }
 
+.sidebar {
+  width: 17%;
+  height: 100vh;
+  margin-right: 10px;
+}
+
+.feed-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    padding-top: 30px;
+    padding-left: 35px;
+    padding-right: 35px;
+    margin-left: 20%;
+}
+
+.suggestions-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30%;
+  margin-left: 10px;
+  padding-top: 40px;
+}
+
+/* Media Queries for responsiveness */
+
+/* Landscape iPad/Tablet (1024px and below) - hide sidebar */
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .feed-section {
+    width: 70%; /* Take more space when sidebar is hidden */
+    margin: 0 auto; /* Center the feed */
+  }
+}
+
+/* Portrait iPad/Tablet and below (768px and below) - hide sidebar and suggestions */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  
+  .suggestions-section {
+    display: none;
+  }
+  
+  .feed-section {
+    width: 100%; /* Take full width on mobile */
+    padding: 0 10px; /* Add some padding */
+  }
+}
+
+/* Mobile devices (480px and below) - adjust for small screens */
+@media (max-width: 480px) {
+  .feed-section {
+    padding: 0 5px; /* Reduce padding for very small screens */
+  }
+}
+
+/* =================================================================================SIDEBAR======================================================= */
 .sidebar-section {
   display: flex;
   flex-direction: column;
@@ -419,6 +485,7 @@ body {
   width: 17%;
   height: 100%;
   border-right: 1px solid rgb(219, 219, 219);
+  position: fixed;
 }
 
 .label {
@@ -463,27 +530,272 @@ body {
   margin-right: 1rem;
 }
 
-/* FEED SECTION */
-
-.feed-section {
-  width: 87%;
-  height: 100vh;
-  display: flex;
-  flex-direction: row;
+/*=============================================================================STORIES==========================================================*/
+.stories{
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
 }
 
-.mid-section{
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  padding-top: 30px;
-  padding-left: 40px;
-  padding-right: 40px;
+.story{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
-/* Soggestions section */
+.story-profile{
+    border: 2px solid magenta;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+}
 
-.suggestions-section{
-  border-left: 1px solid black;
-  width: 27%;
+.story-profile-name{
+   padding: 5px;
+   font-size: 12px;
+   font-weight:400;
+}
+
+.feed{
+    height: 70%;
+}
+
+.suggestions-section {
+    width: 23%; /* Adjusted to account for sidebar width */
+    
+}
+
+/*=============================================================================POSTS============================================================*/
+
+.feed{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.feed-container{
+    width: 75%;
+
+}
+
+.post{
+    margin-top: 10px;
+    width: 100%;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(165, 160, 160, 0.486);
+    cursor: pointer;
+}
+
+.heavy{
+    font-weight: 500;
+}
+
+.post-header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-header{
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic-container{
+    margin-right: 10px;
+}
+
+.post-profile-pic{
+    border-radius: 100%;
+    border: 2px solid magenta;
+    width: 35px;
+    height: 35px;
+}
+
+.instagram-tag{
+    margin-right: 5px;
+}
+
+.post-age{
+    color: rgb(112, 112, 112);
+}
+
+.more-options{
+    margin: 0px;
+}
+
+.post-content{
+    width: 100%;
+}
+
+.post-reactions-options{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.reaction{
+    margin-right: 10px;
+}
+
+.likes{
+    margin-bottom: 5px;
+}
+
+.post-caption{
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.comments{
+    margin-bottom: 5px;
+    color: rgb(112, 112, 112);
+}
+
+.add-comment-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.comment-input-wrapper{
+    width: 90%;
+}
+
+.input-comment{
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.emoji {
+  font-size: 15px !important;
+  width: 15px !important;
+  height: 15px !important;
+  color: rgb(112, 112, 112);
+}
+/*=============================================================================SUGGESTIONS====================================================== */
+
+.my-account {
+  margin-left: 10px;
+}
+
+.my-account p{
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.my-account-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.my-profile-details {
+  display: flex;
+  align-items: center;
+}
+
+.my-profile-pic {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+.more{
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.suggested {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.suggested-follow{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.suggested-profile-details{
+    display: flex;
+    align-items: center;
+
+}
+
+.account-details{
+    margin-left: 10px;
+}
+
+.account-details p{
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
+.follow-account-pic {
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+}
+
+.suggested{
+    margin-top: 5px;
+}
+
+.suggested4u{
+    color: rgb(116, 116, 116);
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.suggested-for-you{
+    color: rgb(116, 116, 116);
+    font-size: 10px;
+    font-weight: 300;
+    
+}
+
+.blue-button{
+  color: #4cb5f9;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.logout-link{
+  text-decoration: none;
+}
+
+.suggestions-footer{
+  width: 100%;
+  padding: 1rem;
+}
+
+.suggestions-footer span {
+  color: rgba(141, 141, 141, 0.521);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.suggestions-footer span:hover {
+  text-decoration: underline;
 }
