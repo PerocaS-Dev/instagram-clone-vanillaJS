@@ -1,10 +1,20 @@
 # 🎬 Instagram Web App Clone
 
 ## 📌 Project Overview
-This is a clone of the instagram web app, built using **HTML,CSS and Vanilla JavaScript**. The goal was to replicate the design and layout, make the web app responsive across devices, as well ass intergrate authentication and data handling in firebase.
+This is a clone of the instagram web app, built using **HTML,CSS and Vanilla JavaScript**. The goal was to replicate the design and layout, make the web app responsive across devices, as well ass intergrate authentication and data handling in firebase. I also used Figma to plan the layout and functionality of the app.
+
+## 🔗 Figma link
+👉 https://www.figma.com/design/kQJphKWI7wZ7Xc9DMB1kOm/Instagram-Clone-UI?m=auto&t=rHIgISt5n1tXE4j2-1
 
 ## 🔗  Netlify link
 👉 https://insta-gram-clone-vanilla-js.netlify.app/
+
+## How the app work:
+ - On the landing page > click on sign up
+ - On the sign up page > enter your details and click the sign up button > click okay on the alert > you will now be on the main page
+ - On the main page > click on logout > this will take ypu back to the sign in page
+ - If you have already signed up > you will be able to login again using your email and password > click okay on the alert message > you will be back to the main page.
+ 
 
 ## 🛠️ Technologies Used
 - **HTML5** - Structure & content  
