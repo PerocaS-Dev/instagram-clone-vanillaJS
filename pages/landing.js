@@ -1,3 +1,6 @@
+import { renderSignupPage } from "./signup.js";
+import { renderMainPage } from "./main.js";
+
 export function renderLandingPage(container) {
   container.innerHTML = `<div class="landing-page">
         <div class="landing">
@@ -17,14 +20,10 @@ export function renderLandingPage(container) {
                 alt="instagram label"
               />
             </div>
-            <form class="login-form">
-              <input
-                type="text"
-                placeholder="Phone number, username, or email"
-              />
-              <input type="password" placeholder="Password" />
-              <button id="login-btn" class="login-button">Log in</button>
-              
+            <form class="login-form" id="login-form">
+              <input type="email" id="login-email" placeholder="Email" required />
+              <input type="password" id="login-password" placeholder="Password" required />
+              <button type="submit" id="login-btn" class="login-button">Log in</button>
             </form>
             <div class="weird-or-section">
               <div class="line"></div>
@@ -81,15 +80,32 @@ export function renderLandingPage(container) {
     </div>
     </div>`;
 
-  // Add form event listener
-  document.getElementById("login-btn").addEventListener("click", () => {
-    // Handle login logic
-    window.location.hash = "main"; // Navigate to main page 
+  document.getElementById("link-to-signup").addEventListener("click", () => {
+    const container = document.getElementById("app"); // Main app container div
+    renderSignupPage(container);
   });
 
-    // Add form event listener
-  document.getElementById("link-to-signup").addEventListener("click", () => {
-    // Handle login logic
-    window.location.hash = "signup"; // Navigate to main page 
-  });
+  document
+    .getElementById("login-form")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("login-email").value.trim();
+      const password = document.getElementById("login-password").value.trim();
+
+      if (!email || !password) {
+        alert("Please enter both email and password.");
+        return;
+      }
+
+      try {
+        const userCredential = await auth.signInWithEmailAndPassword(
+          email,
+          password
+        );
+        renderMainPage(document.getElementById("app"));
+      } catch (error) {
+        alert(`Login Failed: ${error.message}`);
+      }
+    });
 }

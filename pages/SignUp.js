@@ -1,3 +1,6 @@
+import { renderLandingPage } from "./landing.js";
+import { renderMainPage } from "./main.js";
+
 export function renderSignupPage(container) {
   container.innerHTML = `<div class="signup-page">
       <div class="signup">
@@ -20,11 +23,12 @@ export function renderSignupPage(container) {
             </div>
             <div class="line"></div>
           </div>
-          <form class="signup-form">
-            <input type="text" placeholder="Mobile Number or email" />
-            <input type="password" placeholder="Password" />
-            <input type="text" placeholder="Full Name" />
-            <input type="text" placeholder="Username" />
+          <form class="signup-form" id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email" required />
+            <input type="password" id="signup-password" placeholder="Password" required />
+            <input type="text" id="signup-fullname" placeholder="Full Name" required />
+            <input type="text" id="signup-username" placeholder="Username" required />
+            <button type="submit" id="signup-btn" class="signup-button">Sign Up</button>
           </form>
 
           <div class="signup-info">
@@ -85,13 +89,41 @@ export function renderSignupPage(container) {
     </div>
     </div>`;
 
-  document.getElementById("signup-btn").addEventListener("click", () => {
-    // Handle signup logic
-    window.location.hash = "main"; // Navigate to main page 
+  document.getElementById("back-to-login").addEventListener("click", () => {
+    const container = document.getElementById("app"); // Main app container div
+    renderLandingPage(container);
   });
 
-    document.getElementById("back-to-login").addEventListener("click", () => {
-    // Handle signup logic
-    window.location.hash = "landing"; // Navigate to main page back-to-login
-  });
+  document
+    .getElementById("signup-form")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("signup-email").value.trim();
+      const password = document.getElementById("signup-password").value.trim();
+      const username = document.getElementById("signup-username").value.trim();
+
+      if (!email || !email.includes("@") || !password || !username) {
+        alert("Please enter a valid email, password, and username.");
+        return;
+      }
+
+      try {
+        const userCredential = await auth.createUserWithEmailAndPassword(
+          email,
+          password
+        );
+        const user = userCredential.user;
+
+        await db.collection("users").doc(user.uid).set({
+          username: username,
+          email: email,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+
+        renderMainPage(document.getElementById("app"));
+      } catch (error) {
+        alert(`Sign Up Failed: ${error.message}`);
+      }
+    });
 }

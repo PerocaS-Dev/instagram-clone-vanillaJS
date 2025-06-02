@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Instagram</title>
   </head>
   <body>
+    <script>
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAhJPGaoQo5rGE1FjoFmESogj0ynxbmEbw",
+        authDomain: "instagram-clone-vanillajs.firebaseapp.com",
+        projectId: "instagram-clone-vanillajs",
+        storageBucket: "instagram-clone-vanillajs.firebasestorage.app",
+        messagingSenderId: "283489982739",
+        appId: "1:283489982739:web:d4ae08db2c426403b4a2e6",
+        measurementId: "G-VP4QJE22BQ",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Initialize services
+      const auth = firebase.auth();
+      const db = firebase.firestore();
+      const storage = firebase.storage();
+
+      // Test Firestore
+    </script>
     <div id="app"></div>
-    <script src="App.js" type="module"></script>
+    <script type="module" src="App.js"></script>
   </body>
 </html>

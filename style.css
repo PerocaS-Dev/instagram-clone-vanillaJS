@@ -578,7 +578,7 @@ body {
     justify-content: center;
 }
 
-.feed-container{
+.post-container{
     width: 75%;
 
 }
@@ -666,6 +666,11 @@ body {
     align-items: center;
     margin-bottom: 10px;
 
+}
+
+.post-caption{
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-input-wrapper{
