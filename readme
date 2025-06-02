@@ -1,0 +1,16 @@
+# 🎬 Instagram Web App Clone
+
+## 📌 Project Overview
+This is a clone of the instagram web app, built using **HTML,CSS and Vanilla JavaScript**. The goal was to replicate the design and layout, make the web app responsive across devices, as well ass intergrate authentication and data handling in firebase.
+
+## 🔗  Netlify link
+👉 https://insta-gram-clone-vanilla-js.netlify.app/
+
+## 🛠️ Technologies Used
+- **HTML5** - Structure & content  
+- **CSS3** - Styling & responsiveness
+- **JavaScript** - responsiveness and page rendering
+- **Firebase** - Authentication and data handling
+
+## 📂 Project Setup: github
+👉 https://github.com/PerocaS-Dev/instagram-clone-vanillaJS.git
